@@ -3,6 +3,11 @@
     "description": "package",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "php",
+        "filtan",
+        "filters"
+    ],
     "autoload": {
         "psr-4": {
             "Patienceman\\Filtan\\": "src/"
@@ -15,5 +20,19 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~5.0"
+    },
+    "extra": {
+        "component": "package",
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        },
+        "laravel": {
+          "providers": [
+            "Filtan\\src\\FiltanServiceProvider"
+          ]
+        }
+      }
 }
