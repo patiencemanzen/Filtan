@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "\\Patienceman\\Filtan\\": "packages/filtan/src/"
+            "Patienceman\\Filtan\\": "src/"
         }
     },
     "authors": [
