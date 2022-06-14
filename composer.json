@@ -1,0 +1,19 @@
+{
+    "name": "patienceman/filtan",
+    "description": "package",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Patienceman\\Filtan\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "manirabona patience",
+            "email": "hseal419@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
