@@ -1,6 +1,6 @@
 <?php
 
-    namespace Patienceman\filtan;
+    namespace Patienceman\Filtan;
 
     use Illuminate\Support\ServiceProvider;
 
@@ -11,8 +11,8 @@
          * @return void
          */
         public function register() {
-            $this->app->make('Patienceman\filtan\QueryFilter');
-            $this->app->make('Patienceman\filtan\Filterable');
+            $this->app->make('Patienceman\Filtan\Filters\QueryFilter');
+            $this->app->make('Patienceman\Filtan\Filters\Filterable');
         }
 
         /**
@@ -21,6 +21,6 @@
          * @return void
          */
         public function boot() {
-            //
+
         }
     }

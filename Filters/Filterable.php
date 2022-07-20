@@ -1,5 +1,5 @@
 <?php
-    namespace Patienceman\filtan;
+    namespace Patienceman\Filtan;
 
     use Illuminate\Database\Eloquent\Builder;
 

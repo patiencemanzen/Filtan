@@ -8,9 +8,17 @@
         "filtan",
         "filters"
     ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Patienceman\\Filtan\\FiltanServiceProvider"
+            ]
+        }
+    },
     "autoload": {
         "psr-4": {
-            "Patienceman\\Filtan\\": "src/"
+            "App\\": "app/",
+            "Patienceman\\Filtan\\": "packages/Patienceman/Filtan/src/"
         }
     },
     "authors": [
