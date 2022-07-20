@@ -11,7 +11,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Patienceman\\Filtan\\FiltanServiceProvider"
+                "Patienceman\\Filtan\\Src\\FiltanServiceProvider"
             ]
         }
     },
