@@ -44,6 +44,33 @@ So let use filterable trait to enable filter builder.
         use HasFactory, Filterable;
     }
 ```
+Boom Boom, from now on, we are able call our fiter anytime, any place that need Airplane model, so let see how we can use this in our controller
+
+```PHP
+    namespace App\Http\Controllers\ApiControllers;
+
+    use App\Http\Controllers\Controller;
+    use App\Models\User;
+    use App\Services\Filters\CompanyFilter;
+    use Illuminate\Http\JsonResponse;
+    use Illuminate\Http\Request;
+
+    class AirplaneController extends Controller {
+        /**
+         * Display a listing of the resource.
+         *
+         * @return JsonResponse
+         */
+        public function index(CompanyFilter $filter): JsonResponse {
+            $planes = Airplane::allPlanes()->filter($filter)->get();
+
+            return successResponse(
+                AirplaneResource::collection($planes),
+                AirplaneAlert::DISPLAY_MESSAGE
+            );
+        }
+    }
+```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
