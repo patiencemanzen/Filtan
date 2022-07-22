@@ -11,8 +11,7 @@
          * @return void
          */
         public function register() {
-            $this->app->make('Patienceman\Filtan\QueryFilter');
-            $this->app->make('Patienceman\Filtan\Filterable');
+
         }
 
         /**
