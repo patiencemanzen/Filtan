@@ -15,7 +15,7 @@ In your App/Services directory, create new folrder called Filters, where you gon
 
 After everything, you can add your custom model filter file, let take example of ```App/Services/Filters/AirplaneFilters``` class.
 
-```Laravel
+```PHP
     use Patienceman\Filtan\QueryFilter;
 
     class AirplaneFilter extends QueryFilter {
@@ -31,7 +31,7 @@ So now you have your filters function to be applied when new AirplaneModel query
 We need to communicate to model and tell that we have it filters, so that we can call it anytime!!, 
 So let use filterable trait to enable filter builder.
 
-```Laravel
+```PHP
     namespace App\Models;
 
     use Illuminate\Database\Eloquent\Factories\HasFactory;
