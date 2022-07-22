@@ -16,15 +16,15 @@ In your App/Services directory, create new folrder called Filters, where you gon
 After everything, you can add your custom model filter file, let take example of ```App/Services/Filters/AirplaneFilters``` class.
 
 ```Laravel
-use Patienceman\Filtan\QueryFilter;
+    use Patienceman\Filtan\QueryFilter;
 
-class AirplaneFilter extends QueryFilter {
+    class AirplaneFilter extends QueryFilter {
 
-public function query(string $query){
-    $this->builder->where('name', 'LIKE', '%' . $query . '%');
-}
+        public function query(string $query){
+            $this->builder->where('name', 'LIKE', '%' . $query . '%');
+        }
 
-}
+    }
 ```
 So now you have your filters function to be applied when new AirplaneModel query called!,
 
