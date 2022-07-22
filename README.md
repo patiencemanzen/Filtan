@@ -1,6 +1,6 @@
 # Filtan from Patienceman
 
-FIltan is fast and reusable laravel package for custom model query results filters
+Flltan is fast and reusable laravel package for custom model query filters
 
 ## Installation
 
