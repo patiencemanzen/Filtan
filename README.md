@@ -16,7 +16,7 @@ In your App/Services directory, create new folrder called Filters, where you gon
 After everything, you can add your custom model filter file, let take example of ```App/Services/Filters/AirplaneFilters``` class.
 
 ```PHP
-    namespace App\Services\ModelServices\Filters;
+    namespace App\Services\Filters;
     
     use Patienceman\Filtan\QueryFilter;
 
