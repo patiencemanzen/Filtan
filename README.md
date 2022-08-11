@@ -49,7 +49,7 @@ php artisan make:filter Model/AirPlaneFilter
 ```
 :wave: :wave: That is just what magic can make, awesome right?
 
-In your App/Services/Filters directory, create new folrder called Filters, where you gonna put all of your model filter files.
+In your App/Services/Filters directory, Where you gonna put all of your model filter files.
 
 ```PHP
     namespace App\Services\Filters;
