@@ -3,6 +3,7 @@
     namespace Patienceman\Filtan;
 
     use Illuminate\Support\ServiceProvider;
+    use Patienceman\Filtan\Console\InstallFiltan;
 
     class FiltanServiceProvider extends ServiceProvider {
         /**
@@ -20,6 +21,10 @@
          * @return void
          */
         public function boot() {
-
+            if ($this->app->runningInConsole()) {
+                $this->commands([
+                    InstallFiltan::class
+                ]);
+            }
         }
     }
