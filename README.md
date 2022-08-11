@@ -11,9 +11,44 @@ composer require patienceman/filtan
 ```
 
 ## Usage
-In your App/Services directory, create new folrder called Filters, where you gonna put all of your model filter files.
 
-After everything, you can add your custom model filter file, let take example of ```App/Services/Filters/AirplaneFilters``` class.
+We all like automated stuff like 
+```bash 
+php artisan make:cake BananaCake 
+```
+that what I was doing for you, so you don't have always to create files for filter traditional. :firecracker:
+
+Just one command :tada: 
+Let us use our example of the AirPlane Model and create a new filter:
+
+```bash
+php artisan make:filter AirPlaneFilter
+```
+so it will create the filter file for u, Just in ```bash App\Services\Filters ``
+
+```PHP
+  namespace App\Services\Filters;
+
+  use Patienceman\Filtan\QueryFilter;
+
+  class AirPlaneFilter extends QueryFilter {
+      /**
+       * public function query($query) {
+       *     $this->builder->where('name', 'LIKE', '%' .  . '%')
+       * }
+       */
+  }
+```
+:fire: :fire: What best move we make: in the world?
+
+So you may want even to specify the custom path for your filter, Just relax and add it in front of your filter name.
+Let's take again our current example.
+```bash
+php artisan make:filter Model/AirPlaneFilter
+```
+:wave: :wave: That is just what magic can make, awesome right?
+
+In your App/Services/Filters directory, create new folrder called Filters, where you gonna put all of your model filter files.
 
 ```PHP
     namespace App\Services\Filters;
