@@ -24,7 +24,8 @@ Let us use our example of the AirPlane Model and create a new filter:
 ```bash
 php artisan make:filter AirPlaneFilter
 ```
-so it will create the filter file for u, Just in ```bash App\Services\Filters ``
+so it will create the filter file for u, Just in 
+```bash App\Services\Filters ```
 
 ```PHP
   namespace App\Services\Filters;
