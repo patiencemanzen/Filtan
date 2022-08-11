@@ -52,6 +52,8 @@
                 $filename,
                 $this->getFileInitialContents($namespace, basename($filename, ".php"))
             );
+
+            $this->info("{$namespace} create successfully");
         }
 
 /**
