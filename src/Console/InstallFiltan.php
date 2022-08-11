@@ -47,13 +47,15 @@
             $namespace = str_replace("/", "\\", Str::studly(
                 dirname(str_replace(array("./"), "", $filename)
             )));
+            
+            $baseName = basename($filename, ".php");
 
             file_put_contents(
                 $filename,
-                $this->getFileInitialContents($namespace, basename($filename, ".php"))
+                $this->getFileInitialContents($namespace, $baseName)
             );
 
-            $this->info("{$namespace} create successfully");
+            $this->info("{$namespace}/{$baseName} create successfully");
         }
 
 /**
