@@ -30,27 +30,56 @@
         }
 
         /**
+         * map focuses to the main target
+         *
+         * @param array $target
+         * @param array $focus
+         * @return array
+         */
+        public function findFocuses($target, $focus) {
+            $focused = [];
+            foreach($focus as $f)
+                $focused[$f] = $target[$f];
+            return $focused;
+        }
+
+        /**
          * Apply builder and call each associated query string function
          */
-        public function apply($builder) {
+        public function apply($builder, array $focus) {
             $this->builder = $builder;
+
+            if($focus && $this->fields())
+                foreach ($this->findFocuses($this->fields(), $focus) as $field => $value)
+                    $this->caller($field, $value);
 
             /**
              * Loop over all query strings and call associated function
              * from the class that extended this
              */
-            foreach ($this->fields() as $field => $value) {
-                $method = Str::camel($field);
+            if(!$focus)
+                foreach ($this->fields() as $field => $value)
+                    $this->caller($field, $value);
+        }
 
-                /**
-                 * Check is formed method already
-                 * exist in this class
-                 */
-                if (method_exists($this, $method)) {
+        /**
+         * Call customer user function
+         *
+         * @param string $field
+         * @param string $value
+         * @return void
+         */
+        public function caller($field, $value) {
+            $method = Str::camel($field);
 
-                    // then call method from this class and pass the values
-                    call_user_func_array([$this, $method], (array)strtolower($value));
-                }
+            /**
+             * Check is formed method already
+             * exist in this class
+             */
+            if (method_exists($this, $method)) {
+
+                // then call method from this class and pass the values
+                call_user_func_array([$this, $method], (array)strtolower($value));
             }
         }
 
