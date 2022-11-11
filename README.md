@@ -1,4 +1,4 @@
-# Filtan from Patienceman
+# Laravel - QueryFilter - Filtan
 
 Flltan is fast and reusable laravel package for custom model query filters
 
