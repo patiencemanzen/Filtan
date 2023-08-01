@@ -18,7 +18,7 @@
          *
          * @var string
          */
-        protected $description = 'Create your cutom model filters';
+        protected $description = 'Create your cutom Query Filters';
 
         /**
          * Create a new command instance.
@@ -36,7 +36,7 @@
          */
         public function handle() {
             $name = $this->argument('name');
-            $dir = "./app/Services/Filters";
+            $dir = "./app/QueryFilters";
             $filename = $dir."/{$name}.php";
 
             if (!file_exists(dirname($filename)))
@@ -55,7 +55,7 @@
                 $this->getFileInitialContents($namespace, $baseName)
             );
 
-            $this->info("{$namespace}/{$baseName} create successfully");
+            $this->info("{$namespace}/{$baseName} Create successfully");
         }
 
 /**

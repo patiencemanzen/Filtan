@@ -38,9 +38,11 @@
          */
         public function findFocuses($target, $focus) {
             $focused = [];
+            
             foreach($focus as $f)
                 if (array_key_exists($f, $target))
                     $focused[$f] = $target[$f];
+
             return $focused;
         }
 
