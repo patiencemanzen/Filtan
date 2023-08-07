@@ -1,5 +1,7 @@
 # Laravel - QueryFilter
 
+![ray-so-export (1)](https://github.com/manirabona-programer/Filtan/assets/55847682/7ef50c39-8f5a-4760-9d3c-6a2bad63c69c)
+
 Filtan is a powerful Laravel QueryFilter package designed to simplify and enhance the process of filtering Eloquent queries. It enables developers to effortlessly apply filters to queries and customize the results based on dynamic parameters. By integrating Filtan into your Laravel project, you can build complex and flexible filtering mechanisms for your models effortlessly.
 
 ## Installation
