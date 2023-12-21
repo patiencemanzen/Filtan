@@ -1,4 +1,4 @@
-# Laravel - QueryFilter
+# Filtan - Simplifying Laravel Eloquent Query Filtering
 
 ![ray-so-export (1)](https://github.com/manirabona-programer/Filtan/assets/55847682/7ef50c39-8f5a-4760-9d3c-6a2bad63c69c)
 
@@ -14,7 +14,9 @@ composer require patienceman/filtan
 
 ## Usage
 
-We all like automated stuff like
+We all love automated tasks like artisan commands. 
+With Filtan, you can generate filter files with just one command. 
+No need to manually create filter files!
 
 ```bash
 php artisan make:cake BananaCake 
