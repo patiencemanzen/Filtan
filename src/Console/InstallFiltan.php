@@ -63,7 +63,7 @@
                 $this->getFileInitialContents($namespace, $baseName)
             );
 
-            $this->info("{$namespace}\{$baseName} Create successfully");
+            $this->info($namespace."\\".$baseName." Created successfully");
         }
 
     /** 
@@ -90,7 +90,7 @@ public function getFileInitialContents($namespace, $className) {
          * @param  \\Illuminate\Database\Eloquent\Builder  \$query
          * @return \\Illuminate\Database\Eloquent\Builder
          */
-        public function query(\$query) {
+        public function query(string \$query) {
             // Implement your filter logic here
             // Example: $builder('column_name', 'operator', 'value');
         }
