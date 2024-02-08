@@ -82,7 +82,7 @@
             if (method_exists($this, $method)) {
 
                 // then call method from this class and pass the values
-                call_user_func_array([$this, $method], (array)strtolower($value));
+                call_user_func_array([$this, $method], (array)$value);
             }
         }
 
