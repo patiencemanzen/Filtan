@@ -1,12 +1,12 @@
-# Filtan - Simplifying Laravel Eloquent Query Filtering
+# Simplifying Laravel Eloquent Query Filtering 🪴
 
 ![ray-so-export (1)](https://github.com/manirabona-programer/Filtan/assets/55847682/7ef50c39-8f5a-4760-9d3c-6a2bad63c69c)
 
-Filtan is a powerful Laravel QueryFilter package designed to simplify and enhance the process of filtering Eloquent queries. It enables developers to effortlessly apply filters to queries and customize the results based on dynamic parameters. By integrating Filtan into your Laravel project, you can build complex and flexible filtering mechanisms for your models effortlessly.
+Filtan is a Laravel QueryFilter package that simplifies and improves the process of filtering Eloquent queries. It allows developers to easily apply filters to queries and customize the results based on dynamic parameters. By integrating Filtan into your Laravel project, you can effortlessly create complex and flexible filtering mechanisms for your models.
 
 ## Installation
 
-To install the package don't require much requirement except to paste the following compand in laravel terminal,  and the you're good to go.
+To install the package, simply paste the command in the Laravel terminal. 
 
 ```bash
 composer require patienceman/filtan
@@ -14,18 +14,13 @@ composer require patienceman/filtan
 
 ## Usage
 
-We all love automated tasks like artisan commands. 
-With Filtan, you can generate filter files with just one command. 
-No need to manually create filter files!
+We all love automated tasks like artisan commands. Filtan allows the creation of filter files with a single command, eliminating the need for manual creation.
 
 ```bash
 php artisan make:cake BananaCake 
 ```
 
-that what I was doing for you, so you don't have always to create files for filter traditional. :firecracker:
-
-Just one command :tada:
-Let us use our example of the AirPlane Model and create a new filter:
+Instead of creating files for traditional filters, I can do it for you with just one command. Let's use the Airplane Model example to create a new filter.
 
 ```bash
 php artisan make:filter AirPlaneFilter
@@ -50,15 +45,13 @@ class AirPlaneFilter extends QueryFilter {
      */
 }
 ```
-
-So you may want even to specify the custom path for your filter, Just relax and add it in front of your filter name.
-Let's take again our current example.
+It's possible to specify a custom path for your filter. Simply add it in front of the filter name. Let's revisit our example.
 
 ```bash
 php artisan make:filter Model/AirPlaneFilter
 ```
 
-In your App/Services/Filters directory, Where you gonna put all of your model filter files.
+In your App/Services/Filters directory, Where are you gonna put all of your model filter files?
 
 ```PHP
 namespace App\Services\Filters;
@@ -74,10 +67,10 @@ class AirplaneFilter extends QueryFilter {
 }
 ```
 
-So now you have your filters function to be applied when new AirplaneModel query called!,
+So now you have your filters function to be applied when a new AirplaneModel query is called!
 
-We need to communicate to model and tell that we have it filters, so that we can call it anytime!!,
-So let use filterable trait to enable filter builder.
+We need to communicate to the model and tell them that we have filters so that we can call it anytime!!,
+So let's use a filterable trait to enable filter builder.
 
 ```PHP
 namespace App\Models;
@@ -91,7 +84,7 @@ class Airplane extends Model {
 }
 ```
 
-From now on, we are able call our fiter anytime, any place that need Airplane model, so let see how we can use this in our controller
+From now on, we will be able to call our filter anytime, any place that needs an Airplane model, so let's see how we can use this in our controller
 
 ```PHP
 namespace App\Http\Controllers\ApiControllers;
