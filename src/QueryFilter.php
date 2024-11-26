@@ -52,17 +52,20 @@
         public function apply($builder, array $focus) {
             $this->builder = $builder;
 
-            if($focus && $this->fields())
-                foreach ($this->findFocuses($this->fields(), $focus) as $field => $value)
+            if($focus && $this->fields()) {
+                foreach ($this->findFocuses($this->fields(), $focus) as $field => $value) {
                     $this->caller($field, $value);
+                }
+            }
 
             /**
-             * Loop over all query strings and call associated function
-             * from the class that extended this
+             * Call query strings and call associated function
              */
-            if(!$focus)
-                foreach ($this->fields() as $field => $value)
+            if(!$focus) {
+                foreach ($this->fields() as $field => $value) {
                     $this->caller($field, $value);
+                }
+            }
         }
 
         /**
@@ -76,11 +79,9 @@
             $method = Str::camel($field);
 
             /**
-             * Check is formed method already
-             * exist in this class
+             * Check method already exist in this class
              */
             if (method_exists($this, $method)) {
-
                 // then call method from this class and pass the values
                 call_user_func_array([$this, $method], (array)$value);
             }

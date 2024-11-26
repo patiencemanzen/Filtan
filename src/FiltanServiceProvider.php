@@ -4,6 +4,7 @@
 
     use Illuminate\Support\ServiceProvider;
     use Patienceman\Filtan\Console\InstallFiltan;
+    use Patienceman\Filtan\Console\PublishFiltanConfig;     
 
     class FiltanServiceProvider extends ServiceProvider {
         /**
@@ -12,7 +13,7 @@
          * @return void
          */
         public function register() {
-
+            $this->mergeConfigFrom(__DIR__.'/config/query_filtan.php', 'query_filtan');
         }
 
         /**
@@ -23,8 +24,13 @@
         public function boot() {
             if ($this->app->runningInConsole()) {
                 $this->commands([
-                    InstallFiltan::class
+                    InstallFiltan::class,
+                    PublishFiltanConfig::class,
                 ]);
+    
+                $this->publishes([
+                    __DIR__.'/config/query_filtan.php' => config_path('query_filtan.php'),
+                ], 'config');
             }
         }
     }

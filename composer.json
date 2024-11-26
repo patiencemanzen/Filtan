@@ -1,9 +1,9 @@
 {
     "name": "patienceman/filtan",
-    "description": "Filtan is a powerful Laravel QueryFilter package designed to simplify and enhance the process of filtering Eloquent queries. It enables developers to effortlessly apply filters to queries and customize the results based on dynamic parameters. By integrating Filtan into your Laravel project, you can build complex and flexible filtering mechanisms for your models effortlessly.",
+    "description": "Filtan is Laravel QueryFilter package designed to simplify and enhance the process of filtering Eloquent queries. It enables developers to apply filters to queries and customize the results based on dynamic parameters. By integrating Filtan into your Laravel project, you can build complex and flexible filtering mechanisms for your models effortlessly.",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.5",
+    "version": "1.0.7",
     "homepage": "https://github.com/patiencemanzen/Filtan",
     "readme": "https://github.com/patiencemanzen/Filtan/blob/main/README.md",
     "time": "2024-02-08",
