@@ -3,7 +3,7 @@
     return [
         /**
          * -----------------------------------
-         * Default Query Filters Directory
+         * Default Query Filters Directory 
          * ------------------------------------
          * 
          * This is the base directory where your query filters will be stored.
