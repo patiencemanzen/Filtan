@@ -27,7 +27,7 @@ This will create a ```filtan.php``` file in your config directory. You can custo
 We all love automated tasks like artisan commands. With Filtan, you can generate filter files with just one command. No need to manually create filter files!
 
 ```bash
-php artisan filtan:create BananaCakeFilter
+php artisan filtan:create {filter} --model={model}
 ```
 
 This command will create a filter file for you in the default directory specified in your configuration.
@@ -35,7 +35,7 @@ This command will create a filter file for you in the default directory specifie
 Just one command :tada: Let us use our example of the AirPlane Model and create a new filter:
 
 ```bash
-php artisan filtan:create AirPlaneFilter
+php artisan filtan:create AirPlaneFilter --model=AirPlane
 ```
 
 This will create the filter file in:
