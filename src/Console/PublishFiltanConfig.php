@@ -25,11 +25,7 @@
          * @return void
          */
         public function handle() {
-            $this->call('vendor:publish', [
-                '--tag' => 'config',
-                '--force' => true,
-            ]);
-
+            $this->call('vendor:publish', [ '--tag' => 'config', '--force' => true ]);
             $this->info('Filtan configuration file published successfully.');
         }
     }

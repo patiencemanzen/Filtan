@@ -20,7 +20,7 @@ After installing the package, you need to publish the configuration file. Run th
 php artisan filtan:config
 ```
 
-This will create a query_filtan.php file in your config directory. You can customize the default directory for your filters in this configuration file.
+This will create a ```filtan.php``` file in your config directory. You can customize the default directory for your filters in this configuration file.
 
 ## Usage
 
