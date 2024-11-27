@@ -70,7 +70,7 @@
 
             $this->writeFile($filename, $this->getFileInitialContents($namespace, $baseName));
 
-            $this->info($filename . " Created successfully");
+            $this->info("🎉 Filter created successfully!");
 
             if ($modelName) $this->appendFilterableTraitToModel($modelName);
         }
@@ -174,20 +174,28 @@
             if ($modelPath && $filesystem->exists($modelPath)) {
                 $modelContent = $filesystem->get($modelPath);
 
+                // Add the use statement for the Filterable trait at the top of the file if it doesn't exist
+                if (strpos($modelContent, 'use Patienceman\\Filtan\\Filterable;') === false) {
+                    $modelContent = preg_replace(
+                        '/(namespace\s+[^\;]+;)/',
+                        "$1\n\nuse Patienceman\\Filtan\\Filterable;",
+                        $modelContent,
+                        1
+                    );
+                }
+
+                // Add the use Filterable; statement inside the class definition if it doesn't exist
                 if (strpos($modelContent, 'use Filterable;') === false) {
                     $modelContent = preg_replace(
-                        '/(class\s+' . preg_quote(class_basename($modelName)) . '\s+extends\s+Model\s*\{)/',
-                        "$1\n    use \\Patienceman\\Filtan\\Filterable;",
+                        '/(class\s+' . preg_quote(class_basename($modelName)) . '\s*[^\{]*\{)/',
+                        "$1\n    use Filterable;",
                         $modelContent
                     );
-
-                    $filesystem->put($modelPath, $modelContent);
-                    $this->info("Filterable trait added to model: " . $modelName);
-                } else {
-                    $this->info("Model already uses Filterable trait: " . $modelName);
                 }
+
+                $filesystem->put($modelPath, $modelContent);
             } else {
-                $this->error("Model not found: " . $modelName);
+                $this->error("Target Model not found: " . $modelName);
             }
         }
 
@@ -205,8 +213,7 @@
                 return $modelPath;
             }
 
-            // Search recursively in the app directory
-            $files = $filesystem->allFiles(base_path('app\\Models'));
+            $files = $filesystem->allFiles(base_path('app/Models'));
             foreach ($files as $file) {
                 if (strpos($file->getRealPath(), str_replace('\\', '/', $modelName) . '.php') !== false) {
                     return $file->getRealPath();
